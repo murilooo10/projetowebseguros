@@ -16,7 +16,6 @@ module.exports = {
 
             const salt = await bcrypt.genSalt();
             const hashedPassword = await bcrypt.hash(password, salt); 
-            //crypto.createHash('md5').update(password).digest("hex");
             
                 const [id] = await connection('usuarios').insert({
                     matricula, 

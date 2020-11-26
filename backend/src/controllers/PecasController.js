@@ -41,7 +41,8 @@ module.exports = {
     },
 
     async update(request, response){
-        const{quantidade, id} = request.params;
+        const{id} = request.params;
+        const{quantidade} = request.body;
 
         await connection('pecas').where('id', id).update({
             quantidade

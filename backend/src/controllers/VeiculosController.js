@@ -43,7 +43,8 @@ module.exports = {
     },
 
     async update(request, response){
-        const{quilometragem, avarias, id} = request.params;
+        const{ id} = request.params;
+        const{quilometragem, avarias} = request.body;
 
         await connection('veiculos').where('id', id).update({
             quilometragem,

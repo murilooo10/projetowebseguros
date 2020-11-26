@@ -51,13 +51,12 @@ module.exports = {
         const { id } = request.params;
         await connection('motoristas').where('id', id).first().delete();
 
-        await connection('usuarios').where('id_motorista', id).first().delete();
-
         return response.status(204).send();
     },
 
     async update(request, response){
-        const{valor_venda, id} = request.params;
+        const{ id} = request.params;
+        const{valor_venda} = request.body;
 
         await connection('motoristas').where('id', id).update({
             valor_venda
