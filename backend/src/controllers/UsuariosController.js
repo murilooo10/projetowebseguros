@@ -12,7 +12,7 @@ module.exports = {
     async create(request, response){ //postx
         try{
 
-            const { matricula,  nome, sobrenome, codigo_perfil, email, password} = request.body;
+            const { matricula,  nome, sobrenome, email, password} = request.body;
 
             const salt = await bcrypt.genSalt();
             const hashedPassword = await bcrypt.hash(password, salt); 
